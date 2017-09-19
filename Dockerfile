@@ -7,9 +7,11 @@ LABEL Name=tac_plus
 LABEL Version=1.0.0
 
 RUN apt update && \
-    apt -y install rsyslog tacacs+ 
+    apt -y install tacacs+ 
 
-RUN service rsyslog start
+#RUN apt -y rsyslog
+#RUN service rsyslog start
+
 
 RUN ln -sf /dev/stdout /var/log/tac_plus.acct 
 
