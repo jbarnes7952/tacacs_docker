@@ -7,7 +7,7 @@ LABEL Name=tac_plus
 LABEL Version=1.0.0
 
 RUN apt update && \
-    apt -y install rsyslog tacacs+ nscd  
+    apt -y install rsyslog tacacs+ 
 
 RUN service rsyslog start
 
