@@ -1,5 +1,4 @@
-
-FROM ubuntu:16.04
+FROM ubuntu
 
 MAINTAINER john barnes <jbarnes7952@gmail.com> 
 
@@ -8,10 +7,6 @@ LABEL Version=1.0.0
 
 RUN apt update && \
     apt -y install tacacs+ 
-
-#RUN apt -y rsyslog
-#RUN service rsyslog start
-
 
 RUN ln -sf /dev/stdout /var/log/tac_plus.acct 
 
