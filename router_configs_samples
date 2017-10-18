@@ -1,5 +1,9 @@
-Cisco:
+Sample router configurations for tacacs.  
 
+key: testing123
+
+
+Cisco:
 
 aaa new-model
 tacacs-server host 192.168.1.181 key 7 06120A325847071E544541
@@ -13,12 +17,11 @@ aaa authorization commands 15 default group tacacs+ local
 !
 aaa accounting commands 15 default start-stop group tacacs+ 
 
+
 Arista:
 
-
-
 tacacs-server key 7 071B245F5A001702464058
-tacacs-server host 192.168.33.1
+tacacs-server host 172.28.128.1
 !
 aaa authentication login default group tacacs+ local
 aaa authentication enable default group tacacs+ local
@@ -28,9 +31,9 @@ aaa authorization commands all default group tacacs+ local
 !
 aaa accounting commands all default start-stop group tacacs+
 !
-interface Ethernet1
+interface Ethernet2
    no switchport
-   ip address 192.168.33.10/24
+   ip address 172.28.128.11/24
 !
 
 
@@ -39,7 +42,7 @@ Juniper:
 set system authentication-order tacplus
 set system authentication-order password
 
-set system tacplus-server 192.168.33.1 secret "$9$pGphuRSvMX-b2Lx2aGif5/CtuIESreWX7"
+set system tacplus-server 172.28.129.1 secret "$9$pGphuRSvMX-b2Lx2aGif5/CtuIESreWX7"
 
 set system login class view_configuration permissions secret
 set system login class view_configuration permissions view-configuration
