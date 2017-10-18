@@ -9,8 +9,7 @@ your local machine for development and testing purposes.
 
 ### Prerequisites
 
-Docker
-
+* [Docker](https://www.docker.com/) - Docker
 ### Installing
 
 Quick install from docker hub:
@@ -27,7 +26,11 @@ cd tacacs_docker
 make build
 make run
 ```
-
+### Credentials
+```
+readonly:readonly
+adminer:adminer
+```
 ## Built With
 
 * [TACACS+](http://www.shrubbery.net/tac_plus/) - TACACS+ daemon
