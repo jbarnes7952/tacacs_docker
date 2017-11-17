@@ -35,53 +35,7 @@ Build from source:
 
 ### Router Configuration Example Snippets
 
-Cisco:
-
-    aaa new-model
-    tacacs-server host <HOST_IP> key <KEY>
-    !
-    !
-    aaa authentication login default group tacacs+ local
-    aaa authentication enable default enable
-    !
-    aaa authorization exec default group tacacs+ if-authenticated
-    aaa authorization commands 15 default group tacacs+ local
-    !
-    aaa accounting commands 15 default start-stop group tacacs+
-
-Arista:
-
-    tacacs-server key <KEY>
-    tacacs-server host <HOST_IP>
-    !
-    aaa authentication login default group tacacs+ local
-    aaa authentication enable default group tacacs+ local
-    !
-    aaa authorization exec default group tacacs+ local
-    aaa authorization commands all default group tacacs+ local
-    !
-    aaa accounting commands all default start-stop group tacacs+
-
-Juniper:
-
-    set system authentication-order tacplus
-    set system authentication-order password
-
-    set system tacplus-server <HOST_IP> <KEY>
-
-    set system login class view_configuration permissions secret
-    set system login class view_configuration permissions view-configuration
-
-    set system login user remote-view-config full-name "User template for View Config"
-    set system login user remote-view-config uid 2015
-    set system login user remote-view-config class view_configuration
-
-    set system login user remote-super-users full-name "User template for remote super-users"
-    set system login user remote-super-users uid 2013
-    set system login user remote-super-users class super-user
-
-    set system accounting events interactive-commands
-    set system accounting destination tacplus
+Router configuration samples for Cisco IOS, Arista EOS and Junos are available in ``router_config_samples``
 
 
 ## Built With
