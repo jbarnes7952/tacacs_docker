@@ -14,7 +14,7 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
 
 RUN apk add--update \
     tacacs+ \
-    supervisord\
+    supervisord
 
 RUN ln -sf /dev/stdout /var/log/tac_plus.acct 
 
