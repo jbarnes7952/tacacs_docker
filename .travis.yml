@@ -1,0 +1,8 @@
+services:
+  - docker
+
+install:
+  - docker build -t tacacs_docker .
+
+script:
+  - echo

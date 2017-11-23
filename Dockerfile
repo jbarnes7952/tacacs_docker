@@ -1,12 +1,20 @@
-FROM ubuntu
+FROM alpine:3.6
 
-MAINTAINER john barnes <jbarnes7952@gmail.com> 
-
+MAINTAINER john barnes <jbarnes7952@gmail.com>
 LABEL Name=tac_plus
-LABEL Version=1.0.0
+LABEL Version=0.0.1
 
-RUN apt update && \
-    apt -y install tacacs+ 
+ARG BUILD_DATE
+ARG VCS_REF
+
+LABEL org.label-schema.build-date=$BUILD_DATE \
+      org.label-schema.vcs-url="https://github.com/jbarnes7952/alpine_base.git" \
+      org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.schema-version="1.0.0-rc1"
+
+RUN apk add--update \
+    tacacs+ \
+    supervisord\
 
 RUN ln -sf /dev/stdout /var/log/tac_plus.acct 
 
