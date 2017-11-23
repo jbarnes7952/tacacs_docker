@@ -12,9 +12,10 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.vcs-ref=$VCS_REF \
       org.label-schema.schema-version="1.0.0-rc1"
 
-RUN apk add--update \
-    tacacs+ \
-    supervisord
+RUN apk add --update \
+    supervisor
+
+
 
 RUN ln -sf /dev/stdout /var/log/tac_plus.acct 
 
